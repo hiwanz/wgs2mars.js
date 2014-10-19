@@ -1,11 +1,11 @@
 /*
-*	Usage: var gcjloc = transformFromWGSToGCJ(lng,lat);
+*   Usage: var gcjloc = transformFromWGSToGCJ(lng,lat);
 *   Source: https://github.com/hiwanz/wgs2mars.js.git
 */
 (function(global){
-	// const PI
-	var PI = 3.14159265358979324;
-	// Krasovsky 1940
+    // const PI
+    var PI = 3.14159265358979324;
+    // Krasovsky 1940
     //
     // a = 6378245.0, 1/f = 298.3
     // b = a * (1 - f)
@@ -39,14 +39,14 @@
         return ret;
     }
 
-	// World Geodetic System ==> Mars Geodetic System
+    // World Geodetic System ==> Mars Geodetic System
     function transform(wgLon,wgLat){
-    	var mgLoc = {};
+        var mgLoc = {};
         if (outOfChina(wgLat, wgLon)){
-        	mgLoc = {
-        		lat: wgLat,
-        		lng: wgLon
-        	};
+            mgLoc = {
+                lat: wgLat,
+                lng: wgLon
+            };
             return mgLoc;
         }
         var dLat = transformLat(wgLon - 105.0, wgLat - 35.0);
@@ -58,9 +58,9 @@
         dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * PI);
         dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * PI);
         mgLoc = {
-    		lat: wgLat + dLat,
-    		lng: wgLon + dLon
-    	};
+            lat: wgLat + dLat,
+            lng: wgLon + dLon
+        };
             return mgLoc;
     }
 
