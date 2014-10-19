@@ -1,0 +1,21 @@
+{
+  "name": "wgs2mars",
+  "version": "0.1.0",
+  "description": "a project named wgs2mars",
+  "author": "hiwanz",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiwanz/wgs2mars.js.git"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-watch": "~0.5.2",
+    "matchdep": "*"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
