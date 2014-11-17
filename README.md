@@ -9,7 +9,7 @@
 
 	<script src="src/js/wgs2mars.min.js"></script>
 
-调用代码
+调用代码（参数分别为经度和纬度）;
 
 	var gcjloc = transformFromWGSToGCJ(119.3122312,26.0240049);
 
@@ -25,11 +25,17 @@
 
 [【高德地图API】如何解决坐标转换，坐标偏移？](http://segmentfault.com/blog/gaodelbs/1190000000498434 "【高德地图API】如何解决坐标转换，坐标偏移？")
 
-###该版本算法参考了以下两位的相关实现：
+###该版本算法参考了以下几位的相关实现：
 
 C#版：[地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法](http://blog.csdn.net/coolypf/article/details/8686588 "地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法")
 
 C语言版：[ChinaMapShift](https://github.com/Dronaldo17/ChinaMapShift/blob/master/algorithm/china_shift.c "ChinaMapShift")
+
+中国区域判断优化：[http://www.cnblogs.com/Aimeast/archive/2012/08/09/2629614.html](http://www.cnblogs.com/Aimeast/archive/2012/08/09/2629614.html)
+
+中国区域判断为粗略计算，蓝框表示中国区域，红框为排除区域，台湾什么的你懂的。如下图：
+
+![中国区域判断](in-china-region.jpg)
 
 ##免责声明
 
