@@ -593,7 +593,7 @@ function mapInit() {
 
     AMap.event.addListener(mapObj,'complete',function(){
         for (var i = 0; i < borderData.length; i++) {
-        	addMarker(borderData[i][0],borderData[i][1]);console.log(i)            
+            addMarker(borderData[i][0],borderData[i][1]);
         }
     });
 }

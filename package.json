@@ -1,13 +1,19 @@
 {
   "name": "wgs2mars",
-  "version": "0.1.1",
-  "description": "a project named wgs2mars",
-  "author": "hiwanz",
-  "dependencies": {},
+  "version": "0.2.0",
+  "main": "lib/wgs2mars.min.js",
+  "description": "a little function to transform longitude and latitude from WGS-84 To GCJ-02",
+  "homepage": "https://github.com/hiwanz/wgs2mars.js.git",
+  "author": {
+    "name": "hiwanz",
+    "email": "princeb4d@gmail.com",
+    "url": "https://github.com/hiwanz"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hiwanz/wgs2mars.js.git"
   },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-uglify": "~0.2.0",
@@ -17,5 +23,15 @@
   },
   "engines": {
     "node": ">=0.10.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "WGS-84",
+    "GCJ-02",
+    "map",
+    "wgs2mars"
+  ],
+  "license": "MIT"
 }
