@@ -8,24 +8,25 @@
 
 若已经安装了nodejs，可以在命令行下切换到项目目录执行
 
-  npm start
+    npm start
 
-然后访问：[http://127.0.0.1:3000/demo](http://127.0.0.1:3000/demo)
+然后访问：[http://127.0.0.1:3000/demo](http://127.0.0.1:3000/demo)，允许浏览器定位，查看纠偏效果。
 
+若未安装nodejs，可以直接到demo目录下用浏览器打开index.html文件，查看默认设置的坐标纠偏效果。
 
 ##快速开始
 
 引入脚本
 
-	<script src="lib/wgs2mars.min.js"></script>
+    <script src="lib/wgs2mars.min.js"></script>
 
 调用代码（参数分别为经度和纬度）;
 
-	var gcjloc = transformFromWGSToGCJ(119.3122312,26.0240049);
+  var gcjloc = transformFromWGSToGCJ(119.3122312,26.0240049);
 
 返回GCJ-02坐标对象
 
-	{lng: 119.31705425869873, lat: 26.02096344048847}
+  {lng: 119.31705425869873, lat: 26.02096344048847}
 
 ## 致谢
 
