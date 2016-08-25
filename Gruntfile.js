@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     uglify: {
       options: {
-        banner: '/*! \nAuthor: <%= pkg.author %>\nSource: <%= pkg.repository.url %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
+        banner: '/*! \nAuthor: <%= pkg.author.name %>\nSource: <%= pkg.repository.url %>\nDate: <%= grunt.template.today("yyyy-mm-dd HH:MM:ss") %> \n*/\n',
         footer:'\n',
         beautify: {
           ascii_only: true

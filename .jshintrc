@@ -30,6 +30,8 @@
     "unused": false,
     "multistr": false,
     "globals": {
-      "jQuery": true
+      "jQuery": true,
+      "define": true,
+      "module": true
     }
 }
