@@ -22,11 +22,12 @@
 <div id="func">
     <p id="tip"></p>
     经度：<input type="text" id="lng" value="119.3122312">    纬度：<input type="text" id="lat" value="26.0240049">
-    <button id="test">纠偏测试</button>
+    <button id="remark">标记自定义GPS RAW坐标</button> <button id="test">纠偏测试</button>
 </div>
 <script>
 var mapObj;
-var btn = document.getElementById('test');
+var btntest = document.getElementById('test');
+var btnremark = document.getElementById('remark');
 function mapInit(lng, lat) {
     mapObj = new AMap.Map("map",{
         //二维地图显示视口
@@ -39,11 +40,27 @@ function mapInit(lng, lat) {
     AMap.event.addListener(mapObj,'complete',function(){
 
         addMarker(lng,lat);
-        btn.onclick = function(){
-        	var trueLoc = transformFromWGSToGCJ(lng,lat);
+
+        btntest.onclick = function(){
+        	var trueLoc = transformFromWGSToGCJ(
+                    parseFloat(document.getElementById('lng').value),
+                    parseFloat(document.getElementById('lat').value)
+                );
             console.log(trueLoc);
         	addMarker(trueLoc.lng,trueLoc.lat);
         	mapObj.panTo(new AMap.LngLat(trueLoc.lng,trueLoc.lat));
+        }
+
+        btnremark.onclick = function(){
+            mapObj.clearMap();
+            addMarker(
+                parseFloat(document.getElementById('lng').value),
+                parseFloat(document.getElementById('lat').value)
+            );
+            mapObj.panTo(new AMap.LngLat(
+                parseFloat(document.getElementById('lng').value),
+                parseFloat(document.getElementById('lat').value)
+            ));
         }
     });
 }
