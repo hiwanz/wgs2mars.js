@@ -1,4 +1,4 @@
-# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 #
+# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 #[![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
 
 ##背景
 第一次开发跟地图相关的应用，一开始定位获得经纬度什么的还比较顺利，直到要在地图上显示出来的时候发现位置标记跟理想的不同，虽已提前了解也预料到，但本以为某某地图会提供相关的API实现，翻了一个晚上文档都没有看到，于是就只能自己动手寻找相关算法实现，貌似没有找到Javascript版本，于是有了该移植版本。
