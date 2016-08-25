@@ -79,7 +79,7 @@ function addMarker(lng,lat){
 // 测试html5定位功能
 function testSupport() {
     if (navigator.geolocation) { 
-        document.getElementById('tip').innerHTML = "浏览器支持HTML5 Geolocation,允许定位功能，测试你的坐标纠偏效果"; 
+        document.getElementById('tip').innerHTML = "浏览器支持HTML5 Geolocation,允许定位功能，测试你的坐标纠偏效果，需要通过http协议访问。"; 
     } else { 
     document.getElementById('tip').innerHTML = 
     "浏览器不支持HTML5 Geolocation！请手动输入测试数据。"; 
