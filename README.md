@@ -28,7 +28,11 @@
 
     {lng: 119.31705425869873, lat: 26.02096344048847}
 
-可作为node模块引入
+可通过npm install下载作为node模块引入
+
+    npm install wgs2mars --save-dev
+
+然后在项目中引入
     
     var transform = require('wgs2mars');
     var gcjloc = transform(119.3122312,26.0240049);// 返回{lng: 119.31705425869873, lat: 26.02096344048847}
