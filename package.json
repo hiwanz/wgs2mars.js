@@ -1,6 +1,6 @@
 {
   "name": "wgs2mars",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "lib/wgs2mars.min.js",
   "description": "a little function to transform longitude and latitude from WGS-84 To GCJ-02",
   "homepage": "https://github.com/hiwanz/wgs2mars.js.git",
