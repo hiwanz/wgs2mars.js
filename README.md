@@ -1,4 +1,4 @@
-# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 #[![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
+# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 [![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
 
 ## 前言
 
@@ -58,7 +58,7 @@ C语言版：[ChinaMapShift](https://github.com/Dronaldo17/ChinaMapShift/blob/ma
 
 点在多边形内算法：[PNPOLY - Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html "PNPOLY - Point Inclusion in Polygon Test")
 
-中国区域判断为粗略计算，算法中会排除台湾，香港什么的你懂的。如下图：
+中国区域判断为粗略计算，边界数据中会排除台湾，香港什么的你懂的。如下图：
 
 ![中国区域判断](in-china-region.png)
 
