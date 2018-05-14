@@ -1,7 +1,12 @@
 # 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 #[![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
 
-## 背景
-第一次开发跟地图相关的应用，一开始定位获得经纬度什么的还比较顺利，直到要在地图上显示出来的时候发现位置标记跟理想的不同，虽已提前了解也预料到，但本以为某某地图会提供相关的API实现，翻了一个晚上文档都没有看到，于是就只能自己动手寻找相关算法实现，貌似没有找到Javascript版本，于是有了该移植版本。
+## 前言
+
+此版本相对之前的release做了部分重构，主要调整的内容有：
+
+    1. 优化边界判断算法，使用网上公开的中国边界坐标数据作为地图的不规则图形描边，并判断当前坐标是否落在多边形区域内
+    2. 使用webpack4作为打包工具
+    3. 使用eslint审查代码
 
 
 ## 查看示例
@@ -51,11 +56,11 @@ C#版：[地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法](h
 
 C语言版：[ChinaMapShift](https://github.com/Dronaldo17/ChinaMapShift/blob/master/algorithm/china_shift.c "ChinaMapShift")
 
-中国区域判断优化：[http://www.cnblogs.com/Aimeast/archive/2012/08/09/2629614.html](http://www.cnblogs.com/Aimeast/archive/2012/08/09/2629614.html)
+点在多边形内算法：[PNPOLY - Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html "PNPOLY - Point Inclusion in Polygon Test")
 
-中国区域判断为粗略计算，蓝框表示中国区域，红框为排除区域，台湾什么的你懂的。如下图：
+中国区域判断为粗略计算，算法中会排除台湾，香港什么的你懂的。如下图：
 
-![中国区域判断](in-china-region.jpg)
+![中国区域判断](in-china-region.png)
 
 ## 免责声明
 

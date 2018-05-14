@@ -1,109 +1,115 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Demo</title>
-<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=811417de1d755929db362be5ac388721"></script>
-<script src="../lib/wgs2mars.min.js"></script>
-<style>
-	#map {
-		width: 100%;
-		height: 300px;
-	}
-    #func{
-        padding: 10px;
-        text-align: center;
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Demo</title>
+  <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=811417de1d755929db362be5ac388721"></script>
+  <script src="../lib/wgs2mars.min.js"></script>
+  <style>
+    #map {
+      width: 100%;
+      height: 300px;
     }
-</style>
+
+    #func {
+      padding: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body onload="testSupport()">
 <div id="map"></div>
 <div id="func">
-    <p id="tip"></p>
-    经度：<input type="text" id="lng" value="119.3122312">    纬度：<input type="text" id="lat" value="26.0240049">
-    <button id="remark">标记自定义GPS RAW坐标</button> <button id="test">纠偏测试</button>
+  <p id="tip"></p>
+  经度：<input type="text" id="lng" value="119.3122312"> 纬度：<input type="text" id="lat" value="26.0240049">
+  <button id="remark">标记自定义GPS RAW坐标</button>
+  <button id="test">纠偏测试</button>
 </div>
 <script>
-var mapObj;
-var btntest = document.getElementById('test');
-var btnremark = document.getElementById('remark');
-function mapInit(lng, lat) {
-    mapObj = new AMap.Map("map",{
-        //二维地图显示视口
-        view: new AMap.View2D({
-        	center:new AMap.LngLat(lng,lat),
-            zoom:15 //地图显示的缩放级别
-        })
+  var mapObj;
+  var btntest = document.getElementById('test');
+  var btnremark = document.getElementById('remark');
+
+  function mapInit(lng, lat) {
+    mapObj = new AMap.Map("map", {
+      //二维地图显示视口
+      view: new AMap.View2D({
+        center: new AMap.LngLat(lng, lat),
+        zoom: 15 //地图显示的缩放级别
+      })
     });
 
-    AMap.event.addListener(mapObj,'complete',function(){
+    AMap.event.addListener(mapObj, 'complete', function () {
 
-        addMarker(lng,lat);
+      addMarker(lng, lat);
 
-        btntest.onclick = function(){
-        	var trueLoc = transformFromWGSToGCJ(
-                    parseFloat(document.getElementById('lng').value),
-                    parseFloat(document.getElementById('lat').value)
-                );
-            console.log('纠偏结果：',trueLoc);
-        	addMarker(trueLoc.lng,trueLoc.lat);
-        	mapObj.panTo(new AMap.LngLat(trueLoc.lng,trueLoc.lat));
-        }
+      btntest.onclick = function () {
+        var trueLoc = transformFromWGSToGCJ(
+          parseFloat(document.getElementById('lng').value),
+          parseFloat(document.getElementById('lat').value)
+        );
+        console.log('纠偏结果：', trueLoc);
+        addMarker(trueLoc.lng, trueLoc.lat);
+        mapObj.panTo(new AMap.LngLat(trueLoc.lng, trueLoc.lat));
+      }
 
-        btnremark.onclick = function(){
-            mapObj.clearMap();
-            addMarker(
-                parseFloat(document.getElementById('lng').value),
-                parseFloat(document.getElementById('lat').value)
-            );
-            mapObj.panTo(new AMap.LngLat(
-                parseFloat(document.getElementById('lng').value),
-                parseFloat(document.getElementById('lat').value)
-            ));
-        }
+      btnremark.onclick = function () {
+        mapObj.clearMap();
+        addMarker(
+          parseFloat(document.getElementById('lng').value),
+          parseFloat(document.getElementById('lat').value)
+        );
+        mapObj.panTo(new AMap.LngLat(
+          parseFloat(document.getElementById('lng').value),
+          parseFloat(document.getElementById('lat').value)
+        ));
+      }
     });
-}
-// 在地图上添加点标记函数
-function addMarker(lng,lat){
-	marker=new AMap.Marker({				  
-	icon:new AMap.Icon({    //复杂图标
-			size:new AMap.Size(28,37),//图标大小
-			image:"http://webapi.amap.com/images/custom_a_j.png", //大图地址
-			imageOffset:new AMap.Pixel(-28,0)//相对于大图的取图位置
-		}),
-	position:new AMap.LngLat(lng,lat)
-	});
-	marker.setMap(mapObj);  //在地图上添加点
-}
-// 测试html5定位功能
-function testSupport() {
-    if (navigator.geolocation) { 
-        document.getElementById('tip').innerHTML = "浏览器支持HTML5 Geolocation,允许定位功能，测试你的坐标纠偏效果，需要通过http协议访问。"; 
-    } else { 
-    document.getElementById('tip').innerHTML = 
-    "浏览器不支持HTML5 Geolocation！请手动输入测试数据。"; 
-    } 
-}
-function useGeoLocation(position) { 
-    var latitude = position.coords.latitude; 
-    var longitude = position.coords.longitude; 
-    console.log('GPS定位RAW坐标：',longitude, latitude)
-    document.getElementById('lng').value = longitude; 
-    document.getElementById('lat').value = latitude;    
-    mapInit(longitude,latitude);
-}
+  }
 
-try{
-    navigator.geolocation.getCurrentPosition(useGeoLocation,function(){
-        var lng = parseFloat(document.getElementById('lng').value);
-        var lat = parseFloat(document.getElementById('lat').value);
-        console.log('定位超时，启用默认定位标记');
-        mapInit(lng,lat);
-    },{timeout:5000});
-} catch(ex) {    
+  // 在地图上添加点标记函数
+  function addMarker(lng, lat) {
+    marker = new AMap.Marker({
+      icon: new AMap.Icon({    //复杂图标
+        size: new AMap.Size(28, 37),//图标大小
+        image: "http://webapi.amap.com/images/custom_a_j.png", //大图地址
+        imageOffset: new AMap.Pixel(-28, 0)//相对于大图的取图位置
+      }),
+      position: new AMap.LngLat(lng, lat)
+    });
+    marker.setMap(mapObj);  //在地图上添加点
+  }
+
+  // 测试html5定位功能
+  function testSupport() {
+    if (navigator.geolocation) {
+      document.getElementById('tip').innerHTML = "浏览器支持HTML5 Geolocation,允许定位功能，测试你的坐标纠偏效果，需要通过http协议访问。";
+    } else {
+      document.getElementById('tip').innerHTML =
+        "浏览器不支持HTML5 Geolocation！请手动输入测试数据。";
+    }
+  }
+
+  function useGeoLocation(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+    console.log('GPS定位RAW坐标：', longitude, latitude)
+    document.getElementById('lng').value = longitude;
+    document.getElementById('lat').value = latitude;
+    mapInit(longitude, latitude);
+  }
+
+  try {
+    navigator.geolocation.getCurrentPosition(useGeoLocation, function () {
+      var lng = parseFloat(document.getElementById('lng').value);
+      var lat = parseFloat(document.getElementById('lat').value);
+      console.log('定位超时，启用默认定位标记');
+      mapInit(lng, lat);
+    }, {timeout: 5000});
+  } catch (ex) {
     console.error(ex);
-}
+  }
 </script>
 </body>
 </html>
