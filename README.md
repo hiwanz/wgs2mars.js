@@ -44,13 +44,14 @@
 
 ## 致谢
 
-感谢科普和其他语言版本开源作者的贡献！
+感谢其他语言版本开源作者的贡献！
 
-### 坐标系科普：
+### 地图官方坐标系转换：
 
-[【高德地图API】如何解决坐标转换，坐标偏移？](http://segmentfault.com/blog/gaodelbs/1190000000498434 "【高德地图API】如何解决坐标转换，坐标偏移？")
+[【高德地图API】](http://lbs.amap.com/api/javascript-api/reference/lnglat-to-address/#t2 "【高德地图API】")
+[【百度地图API】](http://lbsyun.baidu.com/index.php?title=webapi/guide/changeposition "【百度地图API】")
 
-### 该版本算法参考了以下几位的相关实现：
+### 该版本算法参考了以下几个项目的相关实现：
 
 C#版：[地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法](http://blog.csdn.net/coolypf/article/details/8686588 "地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法")
 
