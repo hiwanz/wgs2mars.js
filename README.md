@@ -48,6 +48,8 @@
 
 ### 地图官方坐标系转换：
 
+目前各个地图服务提供商都开放了转换服务，推荐使用官方的API
+
 [【高德地图API】](http://lbs.amap.com/api/javascript-api/reference/lnglat-to-address/#t2 "【高德地图API】")
 [【百度地图API】](http://lbsyun.baidu.com/index.php?title=webapi/guide/changeposition "【百度地图API】")
 
