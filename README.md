@@ -15,11 +15,12 @@
 
     npm start
 
-然后访问：[http://127.0.0.1:3000/demo](http://127.0.0.1:3000/demo)，允许浏览器定位，查看纠偏效果。
+浏览器会自动打开[http://localhost:1024/](http://localhost:1024/)，允许浏览器定位，查看纠偏效果。
 
+若出现端口冲突，请修改webpack.config.js文件。
 若未安装nodejs，可以直接到demo目录下用浏览器打开index.html文件，查看默认设置的坐标纠偏效果。
 
-## 快速开始
+## 通过script引入
 
 引入脚本
 
@@ -32,6 +33,8 @@
 返回GCJ-02坐标对象
 
     {lng: 119.31705425869873, lat: 26.02096344048847}
+
+## 作为node模块引入
 
 可通过npm install下载作为node模块引入
 
@@ -67,4 +70,4 @@ C语言版：[ChinaMapShift](https://github.com/Dronaldo17/ChinaMapShift/blob/ma
 
 ## 免责声明
 
-该Javascript版本算法是基于网络上公开已知的其他语言算法实现的移植版本，作者不对其准确性和合法性做保证，**请在遵守国家保密法的前提下自行斟酌使用**。
+该Javascript版本算法是基于网络上公开已知的其他语言算法实现的移植版本，作者不对其准确性和合法性做保证。
