@@ -1,21 +1,13 @@
 # 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 [![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
 
-## 前言
+## 开发调试
 
-此版本相对之前的release做了部分重构，主要调整的内容有：
+项目开发依赖nodejs环境，下载代码后，可以在命令行下切换到项目目录执行
 
-    1. 优化边界判断算法，使用网上公开的中国边界坐标数据作为地图的不规则图形描边，并判断当前坐标是否落在多边形区域内
-    2. 使用webpack4作为打包工具
-    3. 使用eslint审查代码
-
-
-## 查看示例
-
-若已经安装了nodejs，可以在命令行下切换到项目目录执行
-
+    npm i
     npm start
 
-浏览器会自动打开[http://localhost:1024/](http://localhost:1024/)，允许浏览器定位，查看纠偏效果。
+浏览器会自动打开[http://localhost:1024/](http://localhost:1024/)，允许浏览器定位，查看示例纠偏效果。
 
 若出现端口冲突，请修改webpack.config.js文件。
 若未安装nodejs，可以直接到demo目录下用浏览器打开index.html文件，查看默认设置的坐标纠偏效果。
@@ -42,8 +34,8 @@
 
 然后在项目中引入
     
-    var transform = require('wgs2mars');
-    var gcjloc = transform(119.3122312,26.0240049);// 返回{lng: 119.31705425869873, lat: 26.02096344048847}
+    let transform = require('wgs2mars');
+    let gcjloc = transform(119.3122312,26.0240049);// 返回{lng: 119.31705425869873, lat: 26.02096344048847}
 
 ## 致谢
 
