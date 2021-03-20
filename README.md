@@ -56,7 +56,7 @@ C语言版：[ChinaMapShift](https://github.com/Dronaldo17/ChinaMapShift/blob/ma
 
 点在多边形内算法：[PNPOLY - Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu//Research/Short_Notes/pnpoly.html "PNPOLY - Point Inclusion in Polygon Test")
 
-中国区域判断为粗略计算，边界数据中会排除台湾，香港什么的你懂的。如下图：
+中国边界数据描点如下图：
 
 ![中国区域判断](in-china-region.png)
 
