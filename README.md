@@ -18,9 +18,9 @@
 
     <script src="lib/wgs2mars.min.js"></script>
 
-调用代码（参数分别为经度和纬度）;
+调用代码（参数分别为经度和纬度）
 
-    var gcjloc = transformFromWGSToGCJ(119.3122312,26.0240049);
+    var gcjloc = transformFromWGSToGCJ(119.3122312,26.0240049)
 
 返回GCJ-02坐标对象
 
@@ -34,8 +34,8 @@
 
 然后在项目中引入
     
-    let transform = require('wgs2mars');
-    let gcjloc = transform(119.3122312,26.0240049);// 返回{lng: 119.31705425869873, lat: 26.02096344048847}
+    let transform = require('wgs2mars')
+    let gcjloc = transform(119.3122312,26.0240049)// 返回{lng: 119.31705425869873, lat: 26.02096344048847}
 
 ## 致谢
 
