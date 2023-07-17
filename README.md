@@ -1,4 +1,4 @@
-# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 [![Build Status](https://travis-ci.org/hiwanz/wgs2mars.js.svg?branch=master)](https://travis-ci.org/hiwanz/wgs2mars.js)
+# 地球坐标系 (WGS-84)到火星坐标系 (GCJ-02) Javascript版 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/hiwanz/wgs2mars.js/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/hiwanz/wgs2mars.js/tree/main)
 
 ## 开发调试
 
