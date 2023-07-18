@@ -19,8 +19,8 @@
   "devDependencies": {
     "@babel/core": "^7.22.9",
     "@babel/eslint-parser": "^7.22.9",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
+    "@babel/preset-env": "^7.22.9",
+    "babel-loader": "^8.3.0",
     "eslint": "^8.45.0",
     "eslint-webpack-plugin": "^2.7.0",
     "mocha": "^10.2.0",
@@ -29,18 +29,13 @@
     "webpack-dev-server": "^3.11.3"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=14.0.0"
   },
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch --env dev",
     "test": "mocha"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ]
   },
   "keywords": [
     "WGS-84",
