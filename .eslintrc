@@ -20,10 +20,10 @@
 
   "parser": "babel-eslint",
 
-  "plugins": [
-    
-  ],
+  "plugins": [],
 
+  "ignorePatterns": ["**/lib/*.min.js"],
+  
   "rules": {
     "block-scoped-var": 2,
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],

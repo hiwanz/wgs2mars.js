@@ -1,4 +1,3 @@
-/* global describe, it */
 let assert = require('assert')
 let transform = require('../lib/wgs2mars.min')
 

@@ -1,5 +1,6 @@
 const path = require('path')
 const ESLintPlugin = require('eslint-webpack-plugin')
+
 module.exports = {
   entry: [
     './lib/wgs2mars.js'
