@@ -1,5 +1,5 @@
-const path = require('path');
-
+const path = require('path')
+const ESLintPlugin = require('eslint-webpack-plugin')
 module.exports = {
   entry: [
     './lib/wgs2mars.js'
@@ -18,18 +18,14 @@ module.exports = {
     open: true,
     port: 1024
   },
+  plugins: [new ESLintPlugin()],
   module: {
     rules: [
       {
         test: /\.js?$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-      },
-      {
-        test: /(\.js)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
       }
     ]
   }
-};
+}
