@@ -18,7 +18,7 @@
     "sinon": true
   },
 
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
 
   "plugins": [],
 
@@ -55,7 +55,6 @@
     "max-params": 0,
     "max-statements": 0,
     "new-cap": [2, { "newIsCap": true, "capIsNew": false }],
-    "newline-after-var": [2, "always"],
     "new-parens": 2,
     "no-alert": 0,
     "no-array-constructor": 2,
@@ -153,6 +152,11 @@
     "operator-assignment": 0,
     "operator-linebreak": [2, "after"],
     "padded-blocks": 0,
+    "padding-line-between-statements": [
+      "error",
+      { "blankLine": "always", "prev": ["const", "let", "var"], "next": "*"},
+      { "blankLine": "any",    "prev": ["const", "let", "var"], "next": ["const", "let", "var"]}
+    ],
     "quote-props": 0,
     "quotes": [2, "single", "avoid-escape"],
     "radix": 2,
