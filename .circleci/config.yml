@@ -4,7 +4,9 @@ orbs:
   node: circleci/node@5
 
 jobs:
-  node-test: &node-base
+  node-test: &node-test
+    docker:
+      - image: node
     steps:
       - checkout
       - run: node --version
@@ -14,19 +16,19 @@ jobs:
           name: Run tests
           command: npm test
   node14-test:
-    <<: *node-base
+    <<: *node-test
     docker:
       - image: node:14
   node16-test:
-    <<: *node-base
+    <<: *node-test
     docker:
       - image: node:16
   node18-test:
-    <<: *node-base
+    <<: *node-test
     docker:
       - image: node:18
   node20-test:
-    <<: *node-base
+    <<: *node-test
     docker:
       - image: node:20
 
