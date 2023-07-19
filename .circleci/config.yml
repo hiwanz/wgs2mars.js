@@ -15,23 +15,22 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-
-node14-test:
-  <<: *node-base
-  docker:
-    - image: node:14
-node16-test:
-  <<: *node-base
-  docker:
-    - image: node:16
-node18-test:
-  <<: *node-base
-  docker:
-    - image: node:18
-node20-test:
-  <<: *node-base
-  docker:
-    - image: node:20
+  node14-test:
+    <<: *node-base
+    docker:
+      - image: node:14
+  node16-test:
+    <<: *node-base
+    docker:
+      - image: node:16
+  node18-test:
+    <<: *node-base
+    docker:
+      - image: node:18
+  node20-test:
+    <<: *node-base
+    docker:
+      - image: node:20
 
 workflows:
   multiple-node-test:
