@@ -17,7 +17,7 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.9",
+    "@babel/core": "^7.23.2",
     "@babel/eslint-parser": "^7.22.9",
     "@babel/preset-env": "^7.22.9",
     "babel-loader": "^8.3.0",
