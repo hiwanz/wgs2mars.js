@@ -15,7 +15,7 @@ module.exports = {
     filename: 'wgs2mars.min.js'
   },
   devServer: {
-    contentBase: [path.join(__dirname, 'demo'), path.join(__dirname, 'lib')],
+    static: [path.join(__dirname, 'demo'), path.join(__dirname, 'lib')],
     open: true,
     port: 1024
   },
