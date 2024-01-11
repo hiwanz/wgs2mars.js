@@ -17,11 +17,11 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.2",
-    "@babel/eslint-parser": "^7.22.9",
-    "@babel/preset-env": "^7.22.9",
+    "@babel/core": "^7.23.7",
+    "@babel/eslint-parser": "^7.23.3",
+    "@babel/preset-env": "^7.23.8",
     "babel-loader": "^8.3.0",
-    "eslint": "^8.45.0",
+    "eslint": "^8.56.0",
     "eslint-webpack-plugin": "^2.7.0",
     "mocha": "^10.2.0",
     "webpack": "^5.89.0",
