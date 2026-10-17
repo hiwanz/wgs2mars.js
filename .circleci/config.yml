@@ -15,10 +15,6 @@ jobs:
       - run:
           name: Run tests
           command: npm test
-  node16-test:
-    <<: *node-test
-    docker:
-      - image: node:16
   node18-test:
     <<: *node-test
     docker:
@@ -31,6 +27,5 @@ jobs:
 workflows:
   multiple-node-test:
     jobs:
-      - node16-test
       - node18-test
       - node20-test
