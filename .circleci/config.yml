@@ -1,31 +1,31 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5
+  node: circleci/node@7.2.1
 
 jobs:
-  node-test: &node-test
+  node-test:
+    parameters:
+      node-version:
+        type: string
+
     docker:
-      - image: node
+      - image: cimg/node:<< parameters.node-version >>
+
     steps:
       - checkout
-      - run: node --version
+
       - node/install-packages:
           pkg-manager: npm
+
       - run:
-          name: Run tests
+          name: Run Tests
           command: npm test
-  node18-test:
-    <<: *node-test
-    docker:
-      - image: node:18
-  node20-test:
-    <<: *node-test
-    docker:
-      - image: node:20
 
 workflows:
-  multiple-node-test:
+  node-tests:
     jobs:
-      - node18-test
-      - node20-test
+      - node-test:
+          matrix:
+            parameters:
+              node-version: ["22", "24", "26"]
